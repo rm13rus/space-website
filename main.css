@@ -576,6 +576,145 @@ button, a {
   }
 }
 
+.technologies {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.launch_swiper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.launch_dots {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  margin-inline-start: -150px;
+}
+
+.launch_dot {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid var(--white);
+
+  display: grid;
+  place-items: center;
+  font-weight: var(--fw700);
+}
+
+.launch_dot[aria-expanded = 'true'] {
+  background-color: var(--white);
+}
+
+.launch_dot[aria-expanded = 'true'] h4{
+  color: rgb(0, 0, 0);
+}
+
+.launch_dots .launch_dot:not(:last-child) {
+  margin-block-end: 2rem;
+}
+
+.launch_slider {
+  width: min(100%, 1100px);
+  padding-block-start: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.launch_slider[data-slide = 'true'] {
+  transform: translate(0);
+  opacity: 1;
+  transition: all 900ms linear;
+}
+
+.launch_slider[data-slide = 'false'] {
+  position: absolute;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: all 900ms linear;
+}
+
+.technology_info {
+  max-width: 470px;
+}
+
+.technology_subtitle {
+  font-size: var(--font-size16);
+}
+
+.technology_title {
+  padding-block: 1rem;
+}
+
+@media (max-width: 1450px) {
+  .launch_swiper {
+    flex-direction: column;
+  }
+
+  .launch_dots {
+    position: relative;
+    flex-direction: row;
+    margin: 0;
+    order: 1;
+  }
+
+  .launch_dots .launch_dot:not(:last-child) {
+    margin-inline-end: 2rem;
+  }
+
+  .launch_slider {
+    flex-direction: column;
+  }
+
+  .technology_info {
+    order: 2;
+    padding-block: 1.5em;
+  }
+
+  .technology_subtitle {
+    text-align: center;
+  }
+
+  .technology_title {
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .space_img {
+    max-width: 440px;
+    aspect-ratio: 1/1;
+  }
+
+  .technology_title {
+    font-size: var(--font-size32);
+  }
+}
+
+@media (max-width: 470px) {
+  .space_img {
+    width: 300px;
+  }
+
+  .technology_text {
+    font-size: var(--font-size16);
+  }
+
+  .launch_dot {
+    width: 50px;
+    height: 50px;
+  }
+
+  .launch_dot h4 {
+    font-size: var(--font-size28);
+  }
+}
+
 
 
 

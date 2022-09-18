@@ -46,3 +46,22 @@ manuDot.forEach(item => {
     this.setAttribute('aria-expanded', true);
   });
 });
+
+const launDot = document.querySelectorAll('.launch_dot');
+const launCard = document.querySelectorAll('.launch_slider');
+launDot.forEach(item => {
+  item.addEventListener('click', function () {
+    launCard.forEach(item => {
+      item.setAttribute('data-slide', false);
+    })
+    launDot.forEach(item => {
+      item.setAttribute('aria-expanded', false);
+    })
+
+    let openSlide = document.querySelector('#' + this.getAttribute('aria-controls'));
+    console.log(openSlide);
+    
+    openSlide.setAttribute('data-slide', true);
+    this.setAttribute('aria-expanded', true);
+  });
+});
